@@ -64,7 +64,37 @@ font-size: 40px;
 
 }
 
+.nav-btn{
+  font-size: 1.8rem;
+  border: 1px solid var(--brand-amber);
+  border-radius: 5px;
+  background-color: var(--brand-dark);
+  color: var(--brand-amber);
+  padding: 3px;
+}
+/* nab menu toggler for mobile resposive */
+@media (min-width:995px) { /* min means css apply outside this width */
+  .nav-btn{
+visibility: hidden;
+display: none;
 
+}
+
+}
+
+/* .....................................****************************......................................
+navbar menu responsive  ..................................... */
+
+@media (max-width:995px) {
+  .Nav-menu ul{
+    display: none;
+  }
+  .Nav-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+}
 /* services dropdown design  */
 .dropdown-container{
   position: absolute;
