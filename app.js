@@ -1,5 +1,5 @@
-
-
+const navMenu = document.getElementById("main-nav-menu");
+const navMenuBtn = document.getElementById("menu-toggler");
 const form = document.getElementById("contact-form");
 const status = document.getElementById("formStatus");
 const countryCode = document.getElementById("countryCode");
@@ -52,6 +52,9 @@ phoneInput.addEventListener("input", () => {
 
 updatePhonePlaceholder();
 
+
+
+//send customer query to google sheet 
 form.addEventListener("submit", function (e) {
   if (!validatePhone() || !form.checkValidity()) {
     e.preventDefault();
@@ -112,3 +115,27 @@ window.addEventListener("scroll", () => {
   }
 });
 
+
+// mobile responsive nav menu
+if (navMenu && navMenuBtn) {
+  navMenuBtn.addEventListener("click", () => {
+    const isOpen = navMenu.classList.toggle("is-open");
+    navMenuBtn.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  navMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 995) {
+        navMenu.classList.remove("is-open");
+        navMenuBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 995) {
+      navMenu.classList.remove("is-open");
+      navMenuBtn.setAttribute("aria-expanded", "false");
+    }
+  });
+}
