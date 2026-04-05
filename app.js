@@ -7,11 +7,17 @@ const phoneInput = document.getElementById("phone");
 const phoneHint = document.querySelector("#phone")?.closest(".field")?.querySelector(".form-hint");
 
 const getRequiredDigits = () => {
+  if (!countryCode) {
+    return 10;
+  }
   const selected = countryCode.options[countryCode.selectedIndex];
   return Number(selected.getAttribute("data-digits") || 10);
 };
 
 const updatePhonePlaceholder = () => {
+  if (!phoneInput) {
+    return;
+  }
   const digits = getRequiredDigits();
   phoneInput.placeholder = `${digits}-digit number`;
 };
@@ -19,6 +25,10 @@ const updatePhonePlaceholder = () => {
 const isDigitsOnly = (value) => /^[0-9]+$/.test(value);
 
 const validatePhone = () => {
+  if (!phoneInput || !countryCode) {
+    return true;
+  }
+
   const digits = getRequiredDigits();
   const raw = phoneInput.value.trim();
   const ok = isDigitsOnly(raw) && raw.length === digits;
@@ -40,53 +50,57 @@ const validatePhone = () => {
   return ok;
 };
 
-countryCode.addEventListener("change", () => {
+if (countryCode && phoneInput) {
+  countryCode.addEventListener("change", () => {
+    updatePhonePlaceholder();
+    validatePhone();
+  });
+
+  phoneInput.addEventListener("input", () => {
+    phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
+    validatePhone();
+  });
+
   updatePhonePlaceholder();
-  validatePhone();
-});
-
-phoneInput.addEventListener("input", () => {
-  phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
-  validatePhone();
-});
-
-updatePhonePlaceholder();
+}
 
 
 
 //send customer query to google sheet 
-form.addEventListener("submit", function (e) {
-  if (!validatePhone() || !form.checkValidity()) {
+if (form && status && countryCode) {
+  form.addEventListener("submit", function (e) {
+    if (!validatePhone() || !form.checkValidity()) {
+      e.preventDefault();
+      form.reportValidity();
+      return;
+    }
+
     e.preventDefault();
-    form.reportValidity();
-    return;
-  }
+    status.textContent = "Sending...";
 
-  e.preventDefault();
-  status.textContent = "Sending...";
-
-  const data = {
-    Name: form.Name.value,
-    Contact: `${countryCode.value} ${form.Contact.value}`,
-    Email: form.Email.value,
-    Description: form.Description.value
+    const data = {
+      Name: form.Name.value,
+      Contact: `${countryCode.value} ${form.Contact.value}`,
+      Email: form.Email.value,
+      Description: form.Description.value
 
 
-  };
+    };
 
-  fetch("https://script.google.com/macros/s/AKfycby-avv5qo9pAsibfbbajDHObBQBEkFZTryxdfWp0AyZ8u8tat7NBVOfyVr-zMKCabbhbg/exec", {
-    method: "POST",
-    body: JSON.stringify(data)
-  })
-    .then(res => res.json())
-    .then(response => {
-      status.innerText = "Message sent successfully! Codeageing team will reach you soon!";
-      form.reset();
+    fetch("https://script.google.com/macros/s/AKfycby-avv5qo9pAsibfbbajDHObBQBEkFZTryxdfWp0AyZ8u8tat7NBVOfyVr-zMKCabbhbg/exec", {
+      method: "POST",
+      body: JSON.stringify(data)
     })
-    .catch(() => {
-      status.innerText = "Something went wrong!";
-    });
-});
+      .then(res => res.json())
+      .then(response => {
+        status.innerText = "Message sent successfully! Codeageing team will reach you soon!";
+        form.reset();
+      })
+      .catch(() => {
+        status.innerText = "Something went wrong!";
+      });
+  });
+}
 
 
 
@@ -95,25 +109,29 @@ form.addEventListener("submit", function (e) {
 // Scroll to top button
 const btn = document.getElementById("scrollTopBtn");
 
-window.addEventListener("scroll", () => {
-  btn.style.display = window.scrollY > 300 ? "block" : "none";
-});
+if (btn) {
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
 
-btn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
 // Footer animation on scroll
 const footer = document.querySelector(".animate-footer");
 
-window.addEventListener("scroll", () => {
-  const footerTop = footer.getBoundingClientRect().top;
-  const screenHeight = window.innerHeight;
+if (footer) {
+  window.addEventListener("scroll", () => {
+    const footerTop = footer.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
 
-  if (footerTop < screenHeight - 100) {
-    footer.classList.add("show");
-  }
-});
+    if (footerTop < screenHeight - 100) {
+      footer.classList.add("show");
+    }
+  });
+}
 
 
 // mobile responsive nav menu
