@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Codeageing Courses | Learn Development Like a Modern Academy</title>
+  <title>Codeageing Courses | Launching Soon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -13,305 +13,147 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="Primary-File/Images/Cd-logo.png" type="image/x-icon">
   <link rel="stylesheet" href="courses.css">
 </head>
 
 <body>
-  <header class="course-hero">
-    <nav class="top-nav">
-      <a href="index.html" class="brand">Codeageing</a>
-      <div class="top-actions">
-        <a href="#student-space" class="ghost-btn">Student Area</a>
-        <button class="solid-btn" type="button" data-auth-open>Login / Sign Up</button>
-      </div>
-    </nav>
+  <!-- HTML: Courses Page Wrapper -->
+  <div class="courses-page-shell">
 
-    <div class="hero-layout">
-      <div class="hero-copy-block">
-        <p class="badge">Codeageing Academy</p>
-        <h1>Build job-ready tech skills with a course experience inspired by modern learning platforms.</h1>
-        <p class="hero-copy">
-          Launch your own Udemy-style catalog with course thumbnails, curriculum previews, student login, and a future
-          admin workflow for uploading lectures, PDFs, assignments, and bonus resources.
-        </p>
+    <!-- HTML: Top Navigation -->
+    <header class="courses-header">
+      <nav class="courses-nav">
+        <a href="index.html" class="courses-brand">
+          <img src="Primary-File/Images/Cd-logo.png" alt="Codeageing logo">
+          <span>Codeageing</span>
+        </a>
 
-        <div class="hero-cta">
-          <a href="#catalog" class="solid-btn">Explore Courses</a>
-          <a href="#creator-stack" class="ghost-btn">See Platform Features</a>
+        <div class="courses-nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="#launching-soon" class="courses-nav-status">Launching Soon</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HTML: Hero Section -->
+      <section class="courses-hero reveal-course" id="launching-soon">
+        <div class="courses-hero-copy">
+          <span class="courses-chip">Codeageing Academy</span>
+          <div class="launch-inline-status">
+            <span class="launch-dot"></span>
+            <span>Launching Soon</span>
+          </div>
+          <h1>Professional Tech Courses Are Coming Soon to Codeageing</h1>
+          <p>
+            We are preparing a focused learning experience for web development, AI, software building, and practical
+            career skills. For now, we are keeping this page simple and essential while the academy is being prepared.
+          </p>
+
+          <div class="hero-actions">
+            <a href="index.html#contact" class="courses-btn courses-btn-primary">Join the Waitlist</a>
+            <a href="index.html" class="courses-btn courses-btn-secondary">Back to Home</a>
+          </div>
+
+          <div class="hero-mini-points">
+            <span><i class="fa-solid fa-check"></i> Real project-focused learning</span>
+            <span><i class="fa-solid fa-check"></i> Web, AI, and software tracks</span>
+            <span><i class="fa-solid fa-check"></i> Professional, beginner-friendly structure</span>
+          </div>
         </div>
 
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <strong>6+</strong>
-            <span>Launch-ready courses</span>
-          </div>
-          <div class="hero-stat">
-            <strong>24/7</strong>
-            <span>Student access model</span>
-          </div>
-          <div class="hero-stat">
-            <strong>Future-ready</strong>
-            <span>Admin panel flow</span>
-          </div>
-        </div>
-      </div>
-
-      <aside class="hero-panel">
-        <div class="hero-panel-head">
-          <p>Popular this week</p>
-          <span>Live catalog preview</span>
-        </div>
-
-        <div class="hero-course-preview">
-          <img
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
-            alt="Developer workspace with code on laptop">
-          <div class="preview-content">
-            <h3>Full Stack Web Development Bootcamp</h3>
-            <p>HTML, CSS, JavaScript, APIs, backend, deployment, and real portfolio projects.</p>
-            <div class="preview-meta">
-              <span><i class="fa-solid fa-circle-play"></i> 86 lectures</span>
-              <span><i class="fa-solid fa-file-arrow-down"></i> PDF notes</span>
-              <span><i class="fa-solid fa-trophy"></i> Certificate</span>
+        <div class="courses-hero-visual reveal-course">
+          <div class="hero-preview-card">
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+              alt="Students and developers learning together">
+            <div class="hero-preview-overlay">
+              <span class="preview-label">Academy Preview</span>
+              <h3>Launch-ready course space with the Codeageing theme</h3>
+              <p>Clean lessons, practical projects, and a student-first learning experience.</p>
             </div>
           </div>
         </div>
-      </aside>
-    </div>
-  </header>
+      </section>
 
-  <main>
-    <section class="trusted-strip">
-      <div class="trusted-copy">
-        <span class="micro-label">Built for modern academies</span>
-        <p>Offer recorded lectures, downloadable PDFs, assignments, quizzes, and premium access from one clean student experience.</p>
-      </div>
-      <div class="trusted-points">
-        <span>Course thumbnails</span>
-        <span>Lecture modules</span>
-        <span>Student login</span>
-        <span>Admin-ready structure</span>
-      </div>
-    </section>
-
-    <section class="section" id="catalog">
-      <div class="section-head split-head">
-        <div>
-          <p class="micro-label">Course Catalog</p>
-          <h2>Browse a premium course section built for the Codeageing brand</h2>
-        </div>
-        <p class="section-summary">Inspired by modern learning marketplaces, this section blends a bold featured course panel, skill tabs, and a smooth horizontal catalog while staying fully inside your green-and-amber identity.</p>
-      </div>
-
-      <div class="catalog-stage">
-        <div class="catalog-tab-row" role="tablist" aria-label="Course categories">
-          <button type="button" class="catalog-tab is-active" data-track="artificial-intelligence" role="tab" aria-selected="true">Artificial Intelligence</button>
-          <button type="button" class="catalog-tab" data-track="web-development" role="tab" aria-selected="false">Web Development</button>
-          <button type="button" class="catalog-tab" data-track="ui-ux" role="tab" aria-selected="false">UI / UX Design</button>
-          <button type="button" class="catalog-tab" data-track="digital-marketing" role="tab" aria-selected="false">Digital Marketing</button>
-          <button type="button" class="catalog-tab" data-track="career-launch" role="tab" aria-selected="false">Career Launch</button>
+      <!-- HTML: Essential Preview Section -->
+      <section class="courses-section reveal-course">
+        <div class="section-heading">
+          <span class="courses-chip">What's Coming</span>
+          <h2>Only the essential course details for now</h2>
+          <p>
+            The full learning platform is still under preparation, so this page now focuses only on the most important
+            information.
+          </p>
         </div>
 
-        <div class="catalog-showcase">
-          <article class="featured-course-card" id="featuredCourseCard"></article>
-
-          <div class="course-rail-shell">
-            <div class="course-rail-head">
-              <div>
-                <p class="micro-label">Trending Courses</p>
-                <h3 id="catalogRailTitle">Learn AI with Codeageing</h3>
-              </div>
-              <div class="rail-actions">
-                <button type="button" class="rail-btn" id="catalogPrevBtn" aria-label="Scroll courses left">
-                  <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button type="button" class="rail-btn" id="catalogNextBtn" aria-label="Scroll courses right">
-                  <i class="fa-solid fa-chevron-right"></i>
-                </button>
-              </div>
-            </div>
-
-            <div class="course-rail" id="catalogRail" aria-live="polite"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt-section" id="creator-stack">
-      <div class="section-head split-head">
-        <div>
-          <p class="micro-label">Platform Features</p>
-          <h2>Structured for your future admin panel and content uploads</h2>
-        </div>
-        <p class="section-summary">This layout already anticipates lecture videos, PDFs, quizzes, and downloadable assets so your next backend step is much easier.</p>
-      </div>
-
-      <div class="platform-grid">
-        <article class="platform-card">
-          <i class="fa-solid fa-folder-tree"></i>
-          <h3>Course and module structure</h3>
-          <p>Create categories, courses, sections, and lecture-level items from one admin workflow.</p>
-        </article>
-        <article class="platform-card">
-          <i class="fa-solid fa-file-pdf"></i>
-          <h3>Lecture PDFs and resources</h3>
-          <p>Attach notes, worksheets, links, code files, and practice sheets to each module later.</p>
-        </article>
-        <article class="platform-card">
-          <i class="fa-solid fa-users-gear"></i>
-          <h3>Student and admin roles</h3>
-          <p>The login system below already separates student access from a future admin role.</p>
-        </article>
-        <article class="platform-card">
-          <i class="fa-solid fa-chart-line"></i>
-          <h3>Progress and analytics ready</h3>
-          <p>Add lesson completion, watch history, and enrollment reporting when you build the dashboard backend.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section student-space" id="student-space">
-      <div class="section-head split-head">
-        <div>
-          <p class="micro-label">Student Space</p>
-          <h2>Login system placeholder that can grow into a real learning dashboard</h2>
-        </div>
-        <p class="section-summary">Right now this uses local storage for demo accounts and session state. Later you can replace it with your database and admin panel APIs.</p>
-      </div>
-
-      <div class="student-layout">
-        <div class="student-card auth-state-card" id="authStateCard">
-          <p class="auth-kicker">Account Status</p>
-          <h3 id="authGreeting">You are browsing as a guest</h3>
-          <p id="authDescription">Create an account or sign in to simulate course access, saved student details, and future course ownership.</p>
-          <div class="auth-actions" id="guestActions">
-            <button type="button" class="solid-btn" data-auth-open>Login / Sign Up</button>
-          </div>
-          <div class="auth-actions hidden" id="memberActions">
-            <button type="button" class="ghost-btn" id="signOutBtn">Logout</button>
-          </div>
-        </div>
-
-        <div class="student-card dashboard-card">
-          <div class="dashboard-head">
-            <div>
-              <p class="auth-kicker">Preview Dashboard</p>
-              <h3>Your future learning library</h3>
-            </div>
-            <span class="status-pill" id="dashboardStatus">Locked</span>
-          </div>
-
-          <div class="dashboard-list" id="dashboardList">
-            <article class="dashboard-item">
-              <div>
-                <h4>Full Stack Web Development Bootcamp</h4>
-                <p>Login to unlock lectures, PDFs, and progress tracking.</p>
-              </div>
-              <span>Preview</span>
-            </article>
-            <article class="dashboard-item">
-              <div>
-                <h4>Backend API and Database Masterclass</h4>
-                <p>Use your future admin panel to assign modules and premium access.</p>
-              </div>
-              <span>Preview</span>
-            </article>
-            <article class="dashboard-item">
-              <div>
-                <h4>Resources and certificates</h4>
-                <p>Store bonus PDFs, coding files, and downloadable completion assets.</p>
-              </div>
-              <span>Preview</span>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section roadmap-section">
-      <div class="roadmap-panel">
-        <div>
-          <p class="micro-label">Next Build Phase</p>
-          <h2>Recommended admin panel flow</h2>
-        </div>
-        <div class="roadmap-points">
-          <article>
-            <span>01</span>
-            <p>Admin creates course, price, thumbnail, and category.</p>
+        <div class="essentials-grid">
+          <article class="essential-card">
+            <div class="essential-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Web Development</h3>
+            <p>Beginner to project-based learning for websites, frontend, responsive UI, and real deployment flow.</p>
           </article>
-          <article>
-            <span>02</span>
-            <p>Admin uploads lectures, PDFs, source code, and assignments.</p>
+
+          <article class="essential-card">
+            <div class="essential-icon"><i class="fa-solid fa-robot"></i></div>
+            <h3>AI & Automation</h3>
+            <p>Practical AI usage, prompt workflows, automation ideas, and business-ready implementation concepts.</p>
           </article>
-          <article>
-            <span>03</span>
-            <p>Students log in, enroll, and access only purchased content.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <p>Dashboard tracks progress, completion, and downloadable resources.</p>
+
+          <article class="essential-card">
+            <div class="essential-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Career & Projects</h3>
+            <p>Portfolio thinking, project structure, client delivery mindset, and real-world digital work skills.</p>
           </article>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <div class="auth-modal hidden" id="authModal" aria-hidden="true">
-    <div class="auth-backdrop" data-auth-close></div>
-    <div class="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="authTitle">
-      <button class="close-auth" type="button" aria-label="Close login dialog" data-auth-close>
-        <i class="fa-solid fa-xmark"></i>
-      </button>
+      <!-- HTML: Launch Status Section -->
+      <section class="courses-section courses-launch-panel reveal-course">
+        <div class="launch-panel-copy">
+          <span class="courses-chip courses-chip-light">Status</span>
+          <h2>Codeageing Courses Are in the Preparation Phase</h2>
+          <p>
+            We are designing the course structure, content format, and student experience before opening enrollment.
+            This helps us launch with a more polished and useful learning product.
+          </p>
+        </div>
 
-      <div class="auth-intro">
-        <p class="micro-label">Student Login</p>
-        <h2 id="authTitle">Access your courses and prepare for the future LMS</h2>
-        <p>Use this starter auth system now, then swap it with your real backend when your admin panel is ready.</p>
-      </div>
+        <div class="launch-status-grid">
+          <div class="launch-status-card">
+            <strong>Current Status</strong>
+            <span>Launching Soon</span>
+          </div>
+          <div class="launch-status-card">
+            <strong>Focus</strong>
+            <span>Quality-first course preparation</span>
+          </div>
+          <div class="launch-status-card">
+            <strong>Next Step</strong>
+            <span>Waitlist and first batch announcements</span>
+          </div>
+        </div>
+      </section>
 
-      <div class="auth-tabs">
-        <button type="button" class="auth-tab is-active" data-auth-tab="login">Login</button>
-        <button type="button" class="auth-tab" data-auth-tab="signup">Sign Up</button>
-      </div>
+      <!-- HTML: CTA Section -->
+      <section class="courses-section reveal-course">
+        <div class="courses-cta-panel">
+          <div>
+            <span class="courses-chip">Stay Updated</span>
+            <h2>Want to know when courses go live?</h2>
+            <p>Use the contact section on the home page to share your interest and we can notify you when the academy is ready.</p>
+          </div>
 
-      <form class="auth-form" id="loginForm" data-auth-view="login">
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" placeholder="student@example.com" required>
-        </label>
-        <label>
-          <span>Password</span>
-          <input type="password" name="password" placeholder="Enter password" required minlength="6">
-        </label>
-        <button type="submit" class="solid-btn full-btn">Login</button>
-      </form>
-
-      <form class="auth-form hidden" id="signupForm" data-auth-view="signup">
-        <label>
-          <span>Full name</span>
-          <input type="text" name="name" placeholder="Your full name" required>
-        </label>
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" placeholder="student@example.com" required>
-        </label>
-        <label>
-          <span>Password</span>
-          <input type="password" name="password" placeholder="Create password" required minlength="6">
-        </label>
-        <label>
-          <span>Role</span>
-          <select name="role">
-            <option value="student">Student</option>
-            <option value="admin">Admin</option>
-          </select>
-        </label>
-        <button type="submit" class="solid-btn full-btn">Create Account</button>
-      </form>
-
-      <p class="auth-note">Demo mode only. Accounts are saved in your browser using local storage until you connect a backend.</p>
-      <p class="auth-message" id="authMessage" aria-live="polite"></p>
-    </div>
+          <div class="courses-cta-actions">
+            <a href="index.html#contact" class="courses-btn courses-btn-primary">Contact Codeageing</a>
+            <a href="about.html" class="courses-btn courses-btn-secondary">About Us</a>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
 
   <script src="courses.js"></script>

@@ -1,3 +1,4 @@
+// JS: Shared DOM references
 const navMenu = document.getElementById("main-nav-menu");
 const navMenuBtn = document.getElementById("menu-toggler");
 const form = document.getElementById("contact-form");
@@ -6,6 +7,7 @@ const countryCode = document.getElementById("countryCode");
 const phoneInput = document.getElementById("phone");
 const phoneHint = document.querySelector("#phone")?.closest(".field")?.querySelector(".form-hint");
 
+// JS: Phone validation helpers
 const getRequiredDigits = () => {
   if (!countryCode) {
     return 10;
@@ -66,7 +68,7 @@ if (countryCode && phoneInput) {
 
 
 
-//send customer query to google sheet 
+// JS: Send customer query to Google Sheet
 if (form && status && countryCode) {
   form.addEventListener("submit", function (e) {
     if (!validatePhone() || !form.checkValidity()) {
@@ -95,6 +97,11 @@ if (form && status && countryCode) {
       .then(response => {
         status.innerText = "Message sent successfully! Codeageing team will reach you soon!";
         form.reset();
+        updatePhonePlaceholder();
+        if (phoneHint) {
+          phoneHint.textContent = "Enter digits only. For India, exactly 10 digits.";
+          phoneHint.classList.remove("error");
+        }
       })
       .catch(() => {
         status.innerText = "Something went wrong!";
@@ -104,9 +111,7 @@ if (form && status && countryCode) {
 
 
 
-
-
-// Scroll to top button
+// JS: Scroll to top button
 const btn = document.getElementById("scrollTopBtn");
 
 if (btn) {
@@ -119,7 +124,7 @@ if (btn) {
   });
 }
 
-// Footer animation on scroll
+// JS: Footer animation on scroll
 const footer = document.querySelector(".animate-footer");
 
 if (footer) {
@@ -134,7 +139,7 @@ if (footer) {
 }
 
 
-// mobile responsive nav menu
+// JS: Mobile responsive nav menu
 if (navMenu && navMenuBtn) {
   navMenuBtn.addEventListener("click", () => {
     const isOpen = navMenu.classList.toggle("is-open");
@@ -157,3 +162,42 @@ if (navMenu && navMenuBtn) {
     }
   });
 }
+
+// JS: Reveal elements when they enter the viewport
+const revealElements = document.querySelectorAll(".reveal-up");
+
+if (revealElements.length) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.18
+  });
+
+  revealElements.forEach((element) => revealObserver.observe(element));
+}
+
+// JS: FAQ accordion interaction
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+  const trigger = item.querySelector(".faq-question");
+
+  trigger?.addEventListener("click", () => {
+    const isActive = item.classList.contains("active");
+
+    faqItems.forEach((faqItem) => {
+      faqItem.classList.remove("active");
+      faqItem.querySelector(".faq-question")?.setAttribute("aria-expanded", "false");
+    });
+
+    if (!isActive) {
+      item.classList.add("active");
+      trigger.setAttribute("aria-expanded", "true");
+    }
+  });
+});
