@@ -29,9 +29,12 @@
     <div class="Nav-menu" id="main-nav-menu">
       <ul>
         <li><a href="index.html#Home">Home</a></li>
-        <li class="nav-service">
+        <li class="nav-service nav-item-has-dropdown">
           <a href="index.html#go-to-services" class="nav-service">Services<i class="fa-solid fa-caret-down"></i></a>
-          <div class="dropdown-container">
+          <button class="nav-submenu-toggle" type="button" aria-label="Toggle services menu" aria-expanded="false" aria-controls="services-dropdown">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="dropdown-container" id="services-dropdown">
             <div class="dropdown-services">
               <a href="">
                 <div class="drop-down-services1">
@@ -143,9 +146,12 @@
             </div>
           </div>
         </li>
-        <li class="nav-project">
+        <li class="nav-project nav-item-has-dropdown">
           <a href="index.html#go-to-project" class="nav-project-link">Projects<i class="fa-solid fa-caret-down"></i></a>
-          <div class="dropdown-container project-dropdown">
+          <button class="nav-submenu-toggle" type="button" aria-label="Toggle projects menu" aria-expanded="false" aria-controls="projects-dropdown">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="dropdown-container project-dropdown" id="projects-dropdown">
             <div class="dropdown-services project-dropdown-grid">
               <a href="https://business-365.vercel.app/" target="_blank" rel="noopener noreferrer">
                 <div class="drop-down-services1 project-dropdown-card">

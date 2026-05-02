@@ -27,10 +27,13 @@
       
       <ul>
         <li><a href="#Home">Home</a></li>
-        <li class="nav-service">
+        <li class="nav-service nav-item-has-dropdown">
       <a href="#go-to-services" class="nav-service" >Services<i class="fa-solid fa-caret-down"></i></a>
+      <button class="nav-submenu-toggle" type="button" aria-label="Toggle services menu" aria-expanded="false" aria-controls="services-dropdown">
+        <i class="fa-solid fa-plus"></i>
+      </button>
       <!-- service dropdown -->
-      <div class="dropdown-container">
+      <div class="dropdown-container" id="services-dropdown">
 
         <div class="dropdown-services">
           <a href="">
@@ -149,9 +152,12 @@
       </div>
       </li>
 
-      <li class="nav-project">
+      <li class="nav-project nav-item-has-dropdown">
       <a href="#go-to-project" class="nav-project-link">Projects<i class="fa-solid fa-caret-down"></i></a>
-      <div class="dropdown-container project-dropdown">
+      <button class="nav-submenu-toggle" type="button" aria-label="Toggle projects menu" aria-expanded="false" aria-controls="projects-dropdown">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <div class="dropdown-container project-dropdown" id="projects-dropdown">
 
         <div class="dropdown-services project-dropdown-grid">
           <a href="https://business-365.vercel.app/" target="_blank" rel="noopener noreferrer">
@@ -790,10 +796,25 @@
       <div class="contact-info">
         <div class="contact-badge">Start a Project</div>
         <h2>Let’s Design, Build, and Launch Something Strong for Your Business</h2>
-        <p>
+        <p class="contact-lead">
           Share your idea and we will help shape the best website, software, or AI-powered solution for your goals,
           timeline, and budget.
         </p>
+
+        <div class="contact-stats">
+          <div>
+            <strong>24 hrs</strong>
+            <span>Average first response</span>
+          </div>
+          <div>
+            <strong>UI + AI</strong>
+            <span>Modern design with practical automation</span>
+          </div>
+          <div>
+            <strong>Business-first</strong>
+            <span>Built around growth, clarity, and ROI</span>
+          </div>
+        </div>
 
         <div class="contact-visual">
           <img src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1200&q=80"
@@ -801,17 +822,37 @@
         </div>
 
         <div class="contact-points">
-          <span><i class="fa-solid fa-check"></i> Free strategy call within 24 hours</span>
-          <span><i class="fa-solid fa-check"></i> Premium UI and business-first approach</span>
-          <span><i class="fa-solid fa-check"></i> AI-ready builds and scalable development</span>
+          <article class="contact-point-card">
+            <div class="contact-point-icon"><i class="fa-solid fa-comments"></i></div>
+            <div>
+              <h3>Clear consultation</h3>
+              <p>We help you turn rough ideas into a practical scope, timeline, and delivery plan.</p>
+            </div>
+          </article>
+          <article class="contact-point-card">
+            <div class="contact-point-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <div>
+              <h3>Premium product thinking</h3>
+              <p>Expect cleaner UI, smarter flows, and choices shaped around your business goals.</p>
+            </div>
+          </article>
+          <article class="contact-point-card">
+            <div class="contact-point-icon"><i class="fa-solid fa-rocket"></i></div>
+            <div>
+              <h3>Ready to scale</h3>
+              <p>We build for growth with responsive experiences, scalable code, and AI-ready systems.</p>
+            </div>
+          </article>
         </div>
 
         <div class="contact-meta">
           <div>
             <strong><i class="fa-solid fa-envelope"></i> codeageing@gmail.com</strong>
+            <span>Email us your idea anytime</span>
           </div>
           <div>
             <strong><i class="fa-solid fa-phone-volume"></i> +91 9235648119</strong>
+            <span>Call or WhatsApp for a quick discussion</span>
           </div>
         </div>
       </div>

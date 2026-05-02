@@ -122,6 +122,25 @@ body {
   box-shadow: 0 10px 20px rgba(18, 29, 22, 0.12);
 }
 
+.nav-submenu-toggle {
+  display: none;
+  border: 1px solid rgba(52, 76, 54, 0.14);
+  background: rgba(52, 76, 54, 0.04);
+  color: var(--brand-dark);
+  border-radius: 12px;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-submenu-toggle:hover {
+  background: rgba(52, 76, 54, 0.08);
+  border-color: rgba(52, 76, 54, 0.24);
+}
+
 /* nab menu toggler for mobile resposive */
 @media (min-width:995px) {
 
@@ -1110,6 +1129,38 @@ why choose us  */
   margin-bottom: 16px;
 }
 
+.contact-lead {
+  max-width: 640px;
+}
+
+.contact-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.contact-stats div {
+  padding: 18px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(250, 173, 27, 0.16);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  box-shadow: 0 14px 28px rgba(8, 15, 11, 0.12);
+}
+
+.contact-stats strong {
+  display: block;
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.contact-stats span {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .contact-points span {
   display: inline-block;
   color: var(--brand-amber);
@@ -1137,17 +1188,23 @@ why choose us  */
 
 .contact-meta strong {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   color: var(--bg);
   font-size: 0.95rem;
-
+  margin-bottom: 6px;
 }
 
 .contact-meta i {
   color: #FAAD1B;
   font-size: 1.5rem;
   margin-right: 10px;
+}
+
+.contact-meta span {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
 /* Form Card */
@@ -1660,7 +1717,7 @@ why choose us  */
 
   .Nav-menu ul {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 
   .Nav-icon i {
@@ -2400,14 +2457,44 @@ body {
 
 .contact-points {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 12px;
 }
 
-.contact-points span {
+.contact-point-card {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(250, 173, 27, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.contact-point-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  background: rgba(250, 173, 27, 0.18);
+  color: var(--brand-amber);
+  font-size: 1.2rem;
+}
+
+.contact-point-card h3 {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.contact-point-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.92rem;
+  line-height: 1.65;
 }
 
 .contact-card {
@@ -2468,6 +2555,84 @@ body {
 
 .form-hint.error {
   color: #ffd7d7;
+}
+
+@media (max-width: 995px) {
+  .Nav-menu ul {
+    align-items: stretch;
+    gap: 10px;
+    justify-content: flex-start;
+    left: 0;
+    top: calc(100% + 10px);
+    border: 1px solid rgba(52, 76, 54, 0.1);
+    z-index: 1000;
+  }
+
+  .Nav-menu li {
+    width: 100%;
+  }
+
+  .nav-item-has-dropdown {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 42px;
+    align-items: start;
+    gap: 10px;
+  }
+
+  .nav-item-has-dropdown > a {
+    min-width: 0;
+  }
+
+  .nav-submenu-toggle {
+    display: inline-flex;
+  }
+
+  .nav-item-has-dropdown > a i.fa-caret-down {
+    display: none;
+  }
+
+  .dropdown-container {
+    grid-column: 1 / -1;
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    left: auto;
+    top: auto;
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+  }
+
+  .nav-service:hover .dropdown-container,
+  .nav-project:hover .dropdown-container,
+  .nav-service:focus-within .dropdown-container,
+  .nav-project:focus-within .dropdown-container {
+    display: none;
+  }
+
+  .nav-item-has-dropdown.is-dropdown-open .dropdown-container {
+    display: flex;
+  }
+
+  .nav-item-has-dropdown.is-dropdown-open .nav-submenu-toggle {
+    background: rgba(250, 173, 27, 0.16);
+    border-color: rgba(250, 173, 27, 0.35);
+    color: var(--brand-amber);
+  }
+
+  .nav-item-has-dropdown.is-dropdown-open .nav-submenu-toggle i {
+    transform: rotate(45deg);
+  }
+
+  .project-dropdown {
+    width: 100%;
+    left: auto;
+  }
+
+  .contact-stats {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* CSS: Shared Responsive */
@@ -2582,5 +2747,14 @@ body {
 
   .project-card-visual .project-image {
     aspect-ratio: 14 / 9;
+  }
+
+  .contact-point-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-point-icon {
+    width: 48px;
+    height: 48px;
   }
 }
