@@ -1574,15 +1574,26 @@ why choose us  */
 
 @media (max-width: 995px) {
   .Nav-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
     justify-content: space-between;
     height: auto;
     padding: 10px 16px 16px;
     gap: 10px;
   }
 
+  .logo-container {
+    justify-self: start;
+  }
+
+  .nav-btn {
+    justify-self: end;
+  }
+
   .Nav-menu {
     position: relative;
+    grid-column: 1 / -1;
     width: 100%;
     border-bottom: none;
     padding: 0;
@@ -1594,10 +1605,12 @@ why choose us  */
     flex-wrap: wrap;
     gap: 10px 16px;
     justify-content: center;
+    align-items: center;
     width: 100%;
     background-color: var(--bg);
     padding: 20px;
     display: none;
+    text-align: center;
   }
 
   .Nav-menu.is-open ul {
@@ -2573,9 +2586,9 @@ body {
 
 @media (max-width: 995px) {
   .Nav-menu ul {
-    align-items: stretch;
+    align-items: center;
     gap: 10px;
-    justify-content: flex-start;
+    justify-content: center;
     left: 0;
     top: calc(100% + 10px);
     border: 1px solid rgba(52, 76, 54, 0.1);
@@ -2586,11 +2599,18 @@ body {
     width: 100%;
   }
 
+  .Nav-menu ul > li:not(.nav-item-has-dropdown) {
+    display: flex;
+    justify-content: center;
+  }
+
   .nav-item-has-dropdown {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 42px;
     align-items: start;
     gap: 10px;
+    max-width: 640px;
+    margin: 0 auto;
   }
 
   .nav-item-has-dropdown > a {
@@ -2616,6 +2636,10 @@ body {
     opacity: 1;
     visibility: visible;
     overflow: hidden;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-inline: auto;
   }
 
   .nav-service:hover .dropdown-container,
@@ -2642,6 +2666,28 @@ body {
   .project-dropdown {
     width: 100%;
     left: auto;
+  }
+
+  .drop-down-services1,
+  .drop-down-CAT,
+  .project-dropdown-cta {
+    margin-inline: auto;
+  }
+
+  .dropdown-services a {
+    display: flex;
+    justify-content: center;
+  }
+
+  .project-dropdown-card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .project-dropdown-card .drop-down-services-content {
+    text-align: center;
   }
 
   .contact-stats {
