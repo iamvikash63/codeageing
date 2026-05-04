@@ -210,6 +210,7 @@ if (navMenu && navMenuBtn) {
 const revealElements = document.querySelectorAll(".reveal-up");
 
 if (revealElements.length) {
+  const isMobileViewport = window.innerWidth <= 768;
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -218,7 +219,8 @@ if (revealElements.length) {
       }
     });
   }, {
-    threshold: 0.18
+    threshold: isMobileViewport ? 0.05 : 0.18,
+    rootMargin: isMobileViewport ? "0px 0px -40px 0px" : "0px"
   });
 
   revealElements.forEach((element) => revealObserver.observe(element));
