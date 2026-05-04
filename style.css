@@ -2273,7 +2273,7 @@ body {
 
 .project-card-visual .project-image {
   padding: 0;
-  aspect-ratio: 14 / 9;
+  aspect-ratio: 19 / 9;
   border: none;
   border-radius: 26px;
   overflow: hidden;
