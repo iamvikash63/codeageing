@@ -2130,6 +2130,20 @@ body {
   border-radius: 20px;
 }
 
+.service-thumb-illustration {
+  position: relative;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f7faf5 0%, #e8f2e7 100%);
+  overflow: hidden;
+  padding: 22px;
+}
+
+.service-thumb-illustration img {
+  height: 186px;
+  object-fit: contain;
+  padding: 0;
+}
+
 .service-icon,
 .why-icon {
   width: 58px;
