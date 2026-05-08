@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Codeageing Courses are launching soon with practical training in web development, AI, software building, and career-focused tech skills." />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b1020" />
   <link rel="canonical" href="https://codeageing.com/courses/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Codeageing Courses | Launching Soon" />
   <meta property="og:description" content="Explore the upcoming Codeageing Academy with practical courses in web development, AI, software, and career skills." />
   <meta property="og:url" content="https://codeageing.com/courses/" />
   <meta property="og:site_name" content="Codeageing" />
+  <meta property="og:locale" content="en_IN" />
   <meta property="og:image" content="https://codeageing.com/Primary-File/Images/CDA-Hero-Img.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Codeageing Courses | Launching Soon" />
@@ -31,10 +33,57 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Codeageing Courses",
-      "url": "https://codeageing.com/courses/",
-      "description": "Upcoming Codeageing courses in web development, AI, software building, and practical career skills."
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://codeageing.com/#organization",
+          "name": "Codeageing",
+          "url": "https://codeageing.com/",
+          "logo": "https://codeageing.com/Primary-File/Images/Cd-logo.png",
+          "email": "codeageing@gmail.com",
+          "telephone": "+91-9235648119"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://codeageing.com/#website",
+          "name": "Codeageing",
+          "url": "https://codeageing.com/",
+          "publisher": {
+            "@id": "https://codeageing.com/#organization"
+          }
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://codeageing.com/courses/#webpage",
+          "name": "Codeageing Courses",
+          "url": "https://codeageing.com/courses/",
+          "description": "Upcoming Codeageing courses in web development, AI, software building, and practical career skills.",
+          "isPartOf": {
+            "@id": "https://codeageing.com/#website"
+          },
+          "about": {
+            "@id": "https://codeageing.com/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://codeageing.com/courses/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://codeageing.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Courses",
+              "item": "https://codeageing.com/courses/"
+            }
+          ]
+        }
+      ]
     }
   </script>
 </head>

@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Learn about Codeageing, our founder, vision, gallery, and the approach we use to build modern websites, software, and AI solutions." />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b1020" />
   <link rel="canonical" href="https://codeageing.com/about/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="About Codeageing | Founder, Vision, Team & Gallery" />
   <meta property="og:description" content="Meet Codeageing and explore our founder story, mission, gallery, and the values behind our digital product work." />
   <meta property="og:url" content="https://codeageing.com/about/" />
   <meta property="og:site_name" content="Codeageing" />
+  <meta property="og:locale" content="en_IN" />
   <meta property="og:image" content="https://codeageing.com/Primary-File/Images/my-profile-img.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About Codeageing | Founder, Vision, Team & Gallery" />
@@ -29,10 +31,57 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "name": "About Codeageing",
-      "url": "https://codeageing.com/about/",
-      "description": "About Codeageing, including founder story, company vision, and team values."
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://codeageing.com/#organization",
+          "name": "Codeageing",
+          "url": "https://codeageing.com/",
+          "logo": "https://codeageing.com/Primary-File/Images/Cd-logo.png",
+          "email": "codeageing@gmail.com",
+          "telephone": "+91-9235648119"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://codeageing.com/#website",
+          "name": "Codeageing",
+          "url": "https://codeageing.com/",
+          "publisher": {
+            "@id": "https://codeageing.com/#organization"
+          }
+        },
+        {
+          "@type": "AboutPage",
+          "@id": "https://codeageing.com/about/#webpage",
+          "name": "About Codeageing",
+          "url": "https://codeageing.com/about/",
+          "description": "About Codeageing, including founder story, company vision, and team values.",
+          "isPartOf": {
+            "@id": "https://codeageing.com/#website"
+          },
+          "about": {
+            "@id": "https://codeageing.com/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://codeageing.com/about/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://codeageing.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About",
+              "item": "https://codeageing.com/about/"
+            }
+          ]
+        }
+      ]
     }
   </script>
 </head>
